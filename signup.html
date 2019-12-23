@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+	<title>Todo  -  Managing todo list with javaScript</title> 
+	<meta name="viewport" content="width=device-width , initial-scale=1.0"> 
+	<meta name="description" content="Todo is a basic application built with javaScript. The application seeks to 
+	   help the beginning programmer grasp how to structure and design code">
+	<meta name="keywords" content="javaScript , ES6 , ES8 , asynchronous , promise , await , fetch , file API , 
+	   event driven programming , functional programming , object oriented programming , modular programming , 
+	   error handling , code architecture">
+	<link rel="icon" href="assets/images/favicon.png">
+	<link href="css/style.css" rel="stylesheet">
+</head>
+<body> 
+	<header>
+		<nav class="navbar  fixed-top">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-1 p-t-4">
+						<a class="navbar-brand" href="index.html">Todo</a> 
+                        <!--
+						<button type="button" class="navbar-toggler" data-target="#siteNav">
+							<span class="navbar-toggler-icon"></span>
+						</button> 
+						-->
+					</div> 
+					<div class="col-md-3"></div>
+					<div class="col-md-6 p-t-4">
+						<div class="navbar-toggle collapse" id="siteNav">
+							<ul class="navbar-navigation " role="navigation">
+								<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+								<li class="nav-item"><a class="nav-link" href="signup.html">Sign up</a></li>
+								<li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+							</ul>
+						</div> 
+					</div>
+				</div>
+			</div>
+			
+		</nav>
+	</header>
+
+	<main style="background:#339;padding-bottom:8rem;">
+		
+		<section class="features">
+			<div class="container take-down">
+				<div class="row">
+                    <div class="col-md-3">
+					</div>
+					<div class="col-md-6" id="na">
+					    <h2 class="text-center m-b-2 white-text" id="serverResponse"> Get started for free</h2>
+					    <form action='' , method='POST' class='form-horizontal'>
+                            <label for='name'> Name </label>
+                            <input type='text' , placeholder='Enter your user name' , class='form-control' , name='name' id='name'> 
+                            <p class='name-feedback'></p>
+                            <label for='email'> Email </label>
+                            <input type='email' , class='form-control' , 
+						    name='email' id='email' required>
+                            <span class='email-feedback'></span>
+                            <label for='password'> Password </label>
+                            <input type='password' ,  class='form-control' , name='password' id='password' required>
+                            <span class='password-feedback'></span>
+                            <label for='password'> Confirm Password</label>
+                            <input type='password' ,  class='form-control' , name='confirmPassword' id='confirmPassword' required>
+                            <span class='confirmPassword-feedback'>
+                            <label for='submit' class="send"></label>
+                            <input type='submit'  , class='form-control submit-button' , name='submit' id='submit' value='Sign up'>
+						</form>
+					</div> 
+					<div class="col-md-3">
+					   
+					</div>
+				</div>
+			</div>
+		</section>
+
+	</main>
+	<script type="module" src="js/main.js"></script>
+</body>
