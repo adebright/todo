@@ -52,8 +52,13 @@ Submitting bug request correction
 Use the format for contributing to the repo but the subject for your mail should be : Bug request
 
 **Code Dependencies**
-The code in this repository depend on purely HTML5 , CSS3 , and E5+ . I assume you are using the latest version of google chrome t
-
+<p>The code in this repository depend on purely HTML5 , CSS3 , and E5+ . <br /> 
+ I assume you are using the latest version of google chrome 
+</p>
+<strong> For the code in this repo to work on your local machine , please do the following : </strong>
+1. Use a web server e.g  Apache because some aspect of the application require http protocol 
+1. Properly read the codes html , css and javascript. Replace whatever I asked you to replace with your own value 
+1. 
 **Code Convention**
 * Use proper HTML5 tag and semantic HTML
 * Keep variables as local as possible 

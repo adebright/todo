@@ -1,16 +1,37 @@
 /*!@Program : Todo List Application designed and developed using ES8 
     Developer : Adeleke Bright 
 	Company   : ACE AFRICA SOFTWARE 
+	Modified  : 23 - 12 - 2019
 */ 
+let selector = e => document.querySelector(e)
+const path = selector("#path") //!redirection path  
+
+//!Check if the user is logged in else redirect the user back to the login page 
+if (!localStorage.user ) { 
+	window.location.replace(path.getAttribute("data-redirectPath")) 
+}
+
+//!Handle logout  
+selector("#logout").addEventListener("click" , event => {
+	event.preventDefault() 
+	//! Delete the current login and redirect the user to the login page 
+	localStorage.removeItem("user")
+	window.location.replace(path.getAttribute("data-redirectPath")) 
+})
+
+//!Handle reading of profile status --- Not implemented yet
+
 //! construct the view for the application 
+
 class View {
 	constructor() {
 		this.root = this.getElement('#root') 
-		
-		
-		this.title = this.createElement('h1') 
+		this.welcomeUser = this.createElement("h1")
+		this.welcomeUser.textContent = localStorage.user != undefined ? `Welcome ${localStorage.user} ` : "Welcome Ben"
+		this.welcomeUser.setAttribute("class" , "text-left")
+		this.title = this.createElement('h2') 
 		this.title.setAttribute("class" , "text-center")
-		this.title.textContent = 'Todo list App'  
+		this.title.textContent = 'Todo List App'  
 		this.listContainer = this.createElement('ul') 
 		
 		this.form = this.createElement('form') 
@@ -24,7 +45,7 @@ class View {
 		this.submit.setAttribute("class" , "submit")
 		this.form.append(this.input , this.submit) 
 		
-		this.root.append(this.title , this.form, this.listContainer ) 
+		this.root.append(this.welcomeUser ,  this.title , this.form, this.listContainer ) 
 		
 	}
 	createElement(tag){
@@ -81,7 +102,7 @@ class View {
 //! The model for the application  
 class Model{
 	constructor() {
-		this.todos = [] || JSON.parse(localStorage.todos).todos  
+		this.todos = []   
 	} 
 	addItem(item){
 		this.todos.unshift({
@@ -118,8 +139,8 @@ class Controller {
         this.handleSubmit() 
 		this.handleClick() 
 		this.handleChange() 
-		this.items = JSON.parse(localStorage.todos).todos
-        this.view.showTodo(this.items)		
+		//!this.items = [] || JSON.parse(localStorage.todos).todos
+        this.view.showTodo(this.model.todos)		
 	}
 	handleSubmit(){
 		this.view.form.addEventListener('submit' , event => { 

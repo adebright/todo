@@ -5,7 +5,6 @@ import {validateEmail , validatePassword , verifyPassword } from "./validate"
 let selector = e => document.querySelector(e) 
 let createElement = e => document.createElement(e) 
 
-
 //!Handle submit event 
 selector("form").addEventListener("submit" , event => {
 	event.preventDefault()
@@ -25,20 +24,26 @@ selector("form").addEventListener("submit" , event => {
 				    //! Grab the values stored to localStorage 
 					const storedEmail = JSON.parse(localStorage.validUser).userEmail 
 					const storedPassKey = JSON.parse(localStorage.validUser).userPass 
+					const storedUser    = JSON.parse(localStorage.validUser).userName 
 					console.log(storedEmail , storedPassKey) 
 					//!check to see if the values are equal then work out something 
 					   try {
 						   if ( storedEmail === userEmail.value && storedPassKey === userPass.value) {
 							   //!Redirect the user to the dashboard  
 							   //!Setup cookies  , if someone tries to directly see dashboard without cookie ... No 
+							   
+                                const path = selector("#path") 
 							    const route = {
-	                               currentPage : "/mobile/todo/login.html" , 
-	                               targetPage  : "/mobile/todo/dashboard.html" 
+	                               currentPage : path.getAttribute("data-currentPath")  , 
+	                               targetPage  : path.getAttribute("data-nextPath")
                                 }
+								localStorage.user = storedUser 
                                 if (location.pathname == route.currentPage) { 
-			                        setTimeout(function() {
-			                            window.location.replace(route.targetPage)
-                                    } , 500)
+								    //!Create and save logged in user to localStorage 
+			                            setTimeout(function() {
+			                                window.location.replace(route.targetPage)
+                                        } , 1000)
+									
                                 }	 
 						    }else {
 							   throw {
@@ -67,4 +72,5 @@ selector("form").addEventListener("submit" , event => {
 	}catch(error) {
 			selector(".error").textContent = `${error.name} : ${error.message} `
 	} 
-})
+}) 
+

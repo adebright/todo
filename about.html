@@ -14,7 +14,7 @@
 </head>
 <body> 
 	<header>
-		<nav class="navbar  fixed-top">
+		<nav class="navbar">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-1 p-t-4">
@@ -29,26 +29,43 @@
 					<div class="col-md-6 p-t-4">
 						<div class="navbar-toggle collapse" id="siteNav">
 							<ul class="navbar-navigation " role="navigation">
-								<li class="nav-item"><a class="nav-link" href="about.html">Listfeed</a></li>
-								<li class="nav-item"><a class="nav-link" href="signup.html" id="profile">Profile</a></li>
-								<li class="nav-item"><a class="nav-link" href="login.html" id="logout">Logout</a></li>
+								<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+								<li class="nav-item"><a class="nav-link" href="signup.html">Sign up</a></li>
+								<li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
 							</ul>
 						</div> 
 					</div>
-					<div class="col-md-1"></div>
-					<div class="col-md-1 p-t-4">
-					    <img src="assets/images/fans2.jpg"  class="br-50" height="30" width="30">
+				</div>
+			</div>
+			
+		</nav>
+	</header>
+
+	<main>
+		<section class="features">
+			<div class="container">
+				<div class="row">
+                    <div class="col-md-3">
+						
+					</div>
+					<div class="col-md-4 p-t-4">
+					    <h2 class="text-center"> About Todo </h2>
+					    <p> Todo is a browser application for managing todo items. It allows you to :
+						    <ol>
+							    <li>Create items </li>
+								<li> Edit items </li>
+								<li> Update items </li>
+								<li> Remove items &amp;</li>
+								<li> Track items history </li>
+							</ol>
+					</div> 
+					<div class="col-md-3">
+					   
 					</div>
 				</div>
 			</div>
-			<!-- Change the value of data-path attribute to your own path 
-		=== data-redirectionPath is the current path for the application 
-		-->
-		<data id="path" data-redirectPath="/mobile/todo/todo/login.html">
-		</div>
-		</nav>
-	</header>
-	<div id="root"></div> 
+		</section>
+
+	</main>
 	
-	<script src="js/app.js" type="module"></script>
 </body>

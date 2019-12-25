@@ -34,7 +34,7 @@ selector("form").addEventListener("submit" , event => {
 		            const storeLocally = ((name , email , pass) => {
 	                    try {
 		                    if ( window.localStorage ) {
-			                    localStorage.clear() 
+			                    //!localStorage.clear() 
 			                    const user = {
 				                    userName  : name.value, 
 				                    userEmail : email.value , 
@@ -53,13 +53,13 @@ selector("form").addEventListener("submit" , event => {
                     })(userName , userEmail , verifyPass) 
 					let msg = `${userName.value} , your registration was successful. You will be redirected to 
                             the login page in 4 seconds `
-			        selector("#na").replaceChild(successElement("h2" , msg , "#fff") , selector("#serverResponse")) 
+			        selector("#na").replaceChild(successElement("h2" , msg , "#fff") , selector("#serverResponse"))
+                    const path = selector("#path") 					
 				    const route = {
-						currentPage : "/mobile/todo/signup.html" , 
-						targetPage  : "/mobile/todo/login.html" 
+						currentPage : path.getAttribute("data-currentPath")  , 
+						targetPage  : path.getAttribute("data-nextPath") 
 					}
 		            if (location.pathname == route.currentPage) { 
-					    console.log("Y")
 			            setTimeout(function() {
 			                    window.location.replace(route.targetPage)
                             } , 4000)

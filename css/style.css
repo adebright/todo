@@ -9,7 +9,7 @@ body {
 	line-height : 1.5 ; 
 	box-sizing: border-box ; 
 	text-align : left;
-	background : #efefef;
+	
 } 
 *,
 *::before,
@@ -769,7 +769,7 @@ nav {
 	background-image : url(../assets/images/fans2.jpg) ; 
 	background-size : cover ; 
 	background-attachment : fixed ; 
-	background: rgba(0 , 0 , 0 , 0.7);
+	background: rgba(0 , 0 , 0 , 0.85);
 	margin-bottom : 4rem;
 } 
 .jumbotron > h2 {
@@ -1052,6 +1052,9 @@ div p { /* Descendant selector */
 	width:100px; 
 
 }
+.br-50 {
+	border-radius : 50%!important;
+} 
 .shadow {
 	box-shadow : 5px 8px 10px #000;
 } 
@@ -1225,6 +1228,11 @@ div p { /* Descendant selector */
 	font-size : 1.1rem;
 } 
 /* Design for the application */ 
+.user-profile {
+	height : 50px;
+	width : 50px;
+	border-radius : 50%;
+}
 #root {
 	background : #fff;
 	padding-top : 10rem ; 
@@ -1238,6 +1246,7 @@ div p { /* Descendant selector */
 #root form {
 	margin-left : 25rem;
 	margin-bottom : 3rem;
+	margin-top:10rem ;
 }
 #root ul {
 	list-style:none ; 
@@ -1247,9 +1256,9 @@ div p { /* Descendant selector */
 	margin-bottom : 1rem ; 
 } 
 .submit {
-	background : #339; 
+	background : #000; 
 	color : #fff;
-	padding:.5rem ; 
+	padding:.3rem ; 
 	border-radius : 5px;
 	
 } 
@@ -1259,6 +1268,7 @@ div p { /* Descendant selector */
 	background : #fff;
 	color : #339;
 	font-size : 1.5rem;
+	 
 }
 .app-input::placeholder {
 	text-align : center ;
